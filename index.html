@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jannah's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+         <h1>Hi, I'm Jannah</h1>
+         <img src="zepeto2.png" alt="Jannah's Picture" class="profile-pic">
+     </div>
+     <header>
+         <nav>
+             <ul>
+                 <li><a href="#works">Works</a></li>
+                 <li><a href="#about">About</a></li>
+                 <li><a href="#contact">Contact</a></li>
+             </ul>
+         </nav>
+     </header>
+
+
+
+    <main>
+        <section id="works">
+            <h2>My Works</h2>
+            <div class="works-container">
+                <!-- Repeat for each work -->
+                <div class="work-box" onclick="openPopup('project1')">
+                    <img src="platonicChains.jpg" alt="Project 1 Thumbnail">
+                    <h3>Platonic Chains, IMA NYU</h3>
+                </div>
+                <div class="work-box" onclick="openPopup('project2')">
+                    <img src="loveIsland.png" alt="Project 2 Thumbnail">
+                    <h3>AI Chatbot, IMA NYU</h3>
+                </div>
+                <div class="work-box" onclick="openPopup('project2')">
+                    <img src="louvre.png" alt="Project 2 Thumbnail">
+                    <h3>Love is the Universal Language, Louvre Abu Dhabi</h3>
+                </div>
+
+                <div class="work-box" onclick="openPopup('project2')">
+                    <img src="IMwonderland.png" alt="Project 2 Thumbnail">
+                    <h3>Interactive Media Wonderland, NYUAD</h3>
+                </div>
+
+                <div class="work-box" onclick="openPopup('project2')">
+                    <img src="fifi.png" alt="Project 2 Thumbnail">
+                    <h3>Dancing and Talking Robot, NYUAD</h3>
+                </div>
+
+                <div class="work-box" onclick="openPopup('project2')">
+                    <img src="homes.png" alt="Project 2 Thumbnail">
+                    <h3>"Homes", VR Experience, NYUAD</h3>
+                </div>
+
+                <div class="work-box" onclick="openPopup('project2')">
+                    <img src="wee.png" alt="Project 2 Thumbnail">
+                    <h3>weee chair, NYUAD</h3>
+                </div>
+
+                <div class="work-box" onclick="openPopup('project2')">
+                    <img src="foodMe.png" alt="Project 2 Thumbnail">
+                    <h3>AI Chatbot "FoodMe"</h3>
+                </div>
+
+                <div class="work-box" onclick="openPopup('project2')">
+                    <img src="manifesto.png" alt="Project 2 Thumbnail">
+                    <h3>p5.js Internet Manifesto</h3>
+                </div>
+
+                <div class="work-box" onclick="openPopup('project2')">
+                    <img src="capstone.png" alt="Project 2 Thumbnail">
+                    <h3>Interactive Media Capstone Project work-in-progress</h3>
+                </div>
+
+                <div class="work-box" onclick="openPopup('project2')">
+                    <img src="whereJannah.png" alt="Project 2 Thumbnail">
+                    <h3>Augmented Reality Project, "Where's Jannah"</h3>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am Jannah, a creative and passionate Interactive Media and Business student at NYU Abu Dhabi. I love exploring the intersection of technology and design, creating meaningful experiences through my work.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>If you'd like to collaborate or learn more about my work, feel free to reach out!</p>
+            <p>Email: <a href="ja4343@nyu.edu">ja4343@nyu.edu</a></p>
+        </section>
+    </main>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div id="popup-details">
+                <!-- Content for popup will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
