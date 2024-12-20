@@ -105,7 +105,7 @@ function openPopup(projectId) {
           title: 'Interactive Media Wonderland',
           description: "'Interactive Media Wonderland' is a VR project created on styly.cc respresenting an environment of interrelatted interactive media art works, and displaying them in different ways. The project was part of NYUAD's Interactive Media Showcase, Spring 2023.",
           images: ['IMwonderland3.png','IMwonderland.png', 'IMwonderland1.png', 'IMwonderland2.png'],
-          link: 'https://example.com/project3'
+          link: 'https://gallery.styly.cc/scene/46cc07f2-43d7-4f96-9dc3-d5ed48fd9069'
         },
 
         project16:{
@@ -115,26 +115,33 @@ function openPopup(projectId) {
           link: 'https://example.com/project3'
         },
 
-        project7:{
-          title: 'AI Chatbot, "Love-island(ish)',
-          description: "This chatbot was created based on scripts from the show 'Love Island', and analyzed by ml.js.",
-          images: ['island.png','island1.png','island2.png','island3.png','island4.png','island5.png'],
+        project17:{
+          title: '"Cooking Baba", Interactive Cooking Game',
+          description: "Cooking Baba is an interactive cooking game made on p5.js, controlled by Arduino and C++, and using Computer Vision (OpenCV). This game was my final project for the class 'Introduction to Interactive Media'. Alongside my team member, we first coded the game and made our own visuals and graphics using p5.js, Adobe Illustrator, Adobe Photoshop, and more. The physical aspect of the game included several sensors, such as an accelerometer, force sensor, potentiometer, and buttons. The computer-camera connection was made using Computer Vision, which we manipulated to fit our game and create a smooth user experience.",
+          images: ['cookingBaba.png','cooking1.png','cooking2.png','cooking3.png','cooking4.png'],
           link: 'https://example.com/project3'
         },
 
-        project7:{
-          title: 'AI Chatbot, "Love-island(ish)',
-          description: "This chatbot was created based on scripts from the show 'Love Island', and analyzed by ml.js.",
-          images: ['island.png','island1.png','island2.png','island3.png','island4.png','island5.png'],
-          link: 'https://example.com/project3'
+        project18:{
+          title: "Augmented Reality Project, 'Where's Jannah'",
+          description: "Inspired by the puzzle book 'Where's Waldo?', this AR experience designed on Styly.cc takes the adventurous and curious aspects of this puzzle and turns it into a challenge for the user. This experience depicts a classical 'Where's Waldo?' scenario with one hidden person in the crowd, that the user has to find: Me, Jannah!",
+          images: ['whereJannah.png', 'where1.png' ],
+          link: 'https://gallery.styly.cc/scene/b885cd5c-1473-49b5-9556-ff416b74b056'
         },
 
-        project7:{
-          title: 'AI Chatbot, "Love-island(ish)',
-          description: "This chatbot was created based on scripts from the show 'Love Island', and analyzed by ml.js.",
-          images: ['island.png','island1.png','island2.png','island3.png','island4.png','island5.png'],
-          link: 'https://example.com/project3'
+        project19:{
+          title: '"Pixel Race", p5.js Multiplayer Game',
+          description: "“Pixel Race” is a two-player game in which each player, a unicorn and a horse, has to collect all their designated items, rainbows and hay-bails, before the other player. The winner is whoever collects 20 items before the other player. This project was made using p5.js",
+          images: ['pixelGame.png',"pixel1.png"],
+          link: 'https://editor.p5js.org/j-da-savage/full/p3-SDJlZo'
         },
+
+        project20:{
+          title: 'Arduino Musical Instrument',
+          description: "This was one of my first projects using Arduino and C++, where alongside a team member, we created an instrument out of an accelerometer; force sensor; potentiometer; and buzzer, connected to an Arduino, and wrote a C++ code to control the notes depending of force and other inputs.",
+          images: ['instrument.png','instrument1.png'],
+          link: 'https://github.com/j-da-savage/Introduction-to-Interactive-Media/blob/main/Musical%20Instrument/Documentation.md'
+        }
     };
 
     const project = projects[projectId];
