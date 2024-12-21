@@ -7,7 +7,7 @@ function openPopup(projectId) {
             title: 'Platonic Chains, IMA NYU',
             description: '"Platonic Chains" is a large scale kinetic installation. A web of chains in constant reciprocating motion that viewers may navigate through. Metal trinkets and hardware hung from the industrial chain create sound when hit with the floor and the chain itself. The motion aspect was created using a winch connected to the chains, controlled by a remote control with its buttons being controlled by a linear actuator connected to an Arduino, controlling the movements of the chains. ',
             images: ['platonicChains.jpg', 'platonic1.jpg', 'platonic2.jpg', 'platonic3.jpg','platonic4.jpg', 'platonic5.JPEG', 'platonic6.jpg'],
-            link: 'https://example.com/project1'
+            link: 'https://itp.nyu.edu/shows/spring2024//projects/#10899-platonic-chains'
         },
         project2: {
             title: 'Love is the Universal Language, Louvre Abu Dhabi',
