@@ -144,6 +144,8 @@ function openPopup(projectId) {
         }
     };
 
+
+
     const project = projects[projectId];
 
     if (project) {
@@ -159,6 +161,8 @@ function openPopup(projectId) {
         popup.style.display = 'flex';
     }
 }
+
+
 
 function closePopup() {
     const popup = document.getElementById('popup');
