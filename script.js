@@ -19,6 +19,7 @@ function openPopup(projectId) {
             hasDocumentation: true,
             link: 'https://drive.google.com/file/d/1hR0psITC96xHL3ggYCSAIJUMdzDjOXFR/view?usp=sharing'
         },
+
         project3:{
           title: 'Fifi, the dancing cactus robot, Performing Robots Class',
           description: "As part of the class 'Performing Robots', a classmate and I created a dancing and talking robot, Fifi. Fifi is a robot with a wooden and metal base, movement and talking controlled by servo motors, connected to Ardunios and an H-bridge, while the movement of the base was controlled a Hobby RC shield and remote control which we coded. The project was part of NYUAD's Interactive Media Showcase and performance in Fall 2023 ",
@@ -39,7 +40,7 @@ function openPopup(projectId) {
           title: '"Homes", VR Experience',
           description: "'Homes' is a VR experience created using Unity, for a course called 'Alternate Realities', this project was part of NYUAD's Interactive Media Showcase, Spring 2022. what really is “home”? what is home if not the people in it. there are houses that we struggle to call home because they lack attributes, for home is a special place that lives not in the physical realm, but in our hearts, minds, and spirits. Is home nothing but an empty vessel if there are no memories associated to it, if there is no laughter that fills it, and there are no tears that water it. If a home was a person, who would it be? If home was a feeling, how would it make you feel?And if home was a song, would you sing along? I have always wondered, if rooms could talk, what would they say?  ",
           images: ['homes.png', 'homes1.png', 'homes2.png', 'homes3.png'],
-          hasDocumentation: false,
+          hasDocumentation: false
           },
 
         project6:{
@@ -47,7 +48,6 @@ function openPopup(projectId) {
           description: "The goal of the project is to explore the role of data in the creation of Conversational AI. Using p5.js, RiTa.js, p5.speech, and OpenAI API, this chatbot is a creative assistant meant to help artists and creatives in brainstorming ideas for their projects.",
           images: ['fairyChatbot1.jpg'],
           hasDocumentation: false
-
         },
 
         project7:{
@@ -79,7 +79,7 @@ function openPopup(projectId) {
           description: "[WORK IN PROGRESS] Sofra is an interactive installation that explores identity and nostalgia through the universal language of food. Set in a white kitchen, it uses storytelling and projections to bring this blank canvas to life. Sofra utilizes everyday objects to connect people to personal and cultural interpretations of memory and food. Through the experience, the user gets to see a part of the main character Yasmine’s life, and her struggles as she tries to reconnect with her childhood, family, and friends through food.",
           images: ['capstone.png','capstone2.png','capstone3.png','capstone5.png','capstone4.png','capstone6.png'],
           hasDocumentation: true,
-          link: 'https://messy-pantydraco-e47.notion.site/Capstone-Blog-Jannah-and-Dania-4c6625486d2343c5ae0deed430df2f9e?pvs=4
+          link: 'https://messy-pantydraco-e47.notion.site/Capstone-Blog-Jannah-and-Dania-4c6625486d2343c5ae0deed430df2f9e?pvs=4'
         },
 
         project11:{
@@ -180,17 +180,6 @@ function openPopup(projectId) {
       }
   }
 
-let mysBtn = document
-    .getElementById('scrollbuttonid');
-
-window.addEventListener('scroll', function () {
-    if (document.body.scrollTop > 20
-        || document.documentElement.scrollTop > 20) {
-        mysBtn.style.display = 'block';
-    } else {
-        mysBtn.style.display = 'none';
-    }
-});
 
 
 function closePopup() {
