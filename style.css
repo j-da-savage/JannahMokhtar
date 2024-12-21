@@ -1,4 +1,4 @@
-/* General Styles /* Reset default browser styling */
+/* General Styles /* Res/* General Styles and Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,52 +7,39 @@
 
 html, body {
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: "rl-aqva", sans-serif;
+    font-weight: 900;
+    font-style: normal;
     color: #333;
     background-color: #f9f9f9;
 }
-/* Sidebar */
-.sidebar {
+
+/* Header and Navigation */
+h1 {
     position: fixed;
-    left: 0;
-    top: 0;
-    padding: 20px;
-    background-color: #fff;
-    width: 250px;
-    height: 100vh;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar h1 {
+    left: 20px;
+    top: 20px;
     font-size: 1.8em;
-    margin: 0 0 10px;
+    z-index: 1000;
 }
 
-.sidebar .profile-pic {
-    width: 80%; /* Update size for better appearance */
-    border-radius: 50%;
-    margin: 10px 0;
-}
-
-/* Header (Top Bar) */
 header {
     position: fixed;
-    top: 0; /* Stick to top */
-    left: 250px; /* Align with the sidebar */
-    width: calc(100% - 250px); /* Take the remaining space */
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    top: 0;
+    left: 0;  /* Changed from 250px */
+    width: 100%;  /* Changed from calc(100% - 250px) */
     padding: 10px 20px;
+    padding-top: 3%;
     z-index: 1000;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: flex-end; /* Push links to the right */
+    justify-content: flex-end;
     gap: 20px;
     margin: 0;
-    padding: 0;
+    padding-top: 20px;
 }
 
 nav ul li a {
@@ -68,45 +55,113 @@ nav ul li a:hover {
 
 /* Main Content */
 main {
-    margin-left: 250px; /* Offset for sidebar */
-    padding: 80px 20px 20px; /* Adjust for header height */
+    margin: 0;  /* Changed from margin-left: 250px */
+    padding: 80px 20px 20px;
 }
 
-/* Works Section */
+/* Container and Scroll */
+#container {
+    width: 100%;
+    height: 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    white-space: nowrap;
+    animation: loop 30s linear infinite;
+    position: absolute;
+}
+
+.scroll#scroll-two {
+    transform: translateX(210%);
+    animation-delay: 15s;
+}
+
+.image-item {
+    height: 100%;
+    width: 50%;
+    margin: 0 0.5rem;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    padding-top: 1%;
+}
+
+.image-item img {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+}
+
+/* Update the works container to use columns instead of grid */
 #works .works-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-
+    columns: 4;  /* Or however many columns you want */
+    column-gap: 20px;
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
 }
 
+/* Update work-box to break across columns properly */
 .work-box {
-    /* background-color: #fff; */
+    break-inside: avoid;
     padding: 8px;
+    margin-bottom: 20px;  /* Space between items */
     border-radius: 8px;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease;
+    display: inline-block;
+    width: 100%;
 }
 
+/* Keep the hover effect */
 .work-box:hover {
     transform: scale(1.05);
 }
 
+/* Ensure images fill their containers */
 .work-box img {
     max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Prevent inline space issues */
+    height: auto;
+    display: block;
     border-radius: 4px;
     object-fit: cover;
-    /* spacing: 0; */
-    /* float: bot */
+}
+
+/* Make it responsive */
+@media screen and (max-width: 1200px) {
+    #works .works-container {
+        columns: 3;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #works .works-container {
+        columns: 2;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #works .works-container {
+        columns: 1;
+    }
 }
 
 
+
+ @keyframes loop {
+   0% { transform: translateX(-100%); }
+   100% { transform: translateX(100%); }
+ }
+
+
+
 .popup-images {
-    display: grid; /* Use grid layout */
+    display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
     gap: 10px; /* Space between images */
     justify-items: center; /* Center images horizontally */
