@@ -1,4 +1,3 @@
-// JavaScript for Popup Functionality
 function openPopup(projectId) {
     const popup = document.getElementById('popup');
     const popupDetails = document.getElementById('popup-details');
@@ -62,7 +61,7 @@ function openPopup(projectId) {
         project9:{
           title: 'weee chair, NYUAD',
           description: "The weeeChair was fully designed and built by me for the class 'Utilitas, Venustas, Firmitas. The WeeeChair is a playful, multi-audience furniture piece designed to bridge generational gaps by combining functionality with fun. Inspired by childhood memories, it integrates a slide into a sophisticated design that suits both children and adults. With vibrant colors and a refined aesthetic, the WeeeChair fosters interaction and connection in shared spaces, blending cultural storytelling with innovative design principles. The chair was designed on Adobe Illustrator and its wooden pieces were cut using a waterjet cutter, then assembled and painted by me. The wooden chair supports up to 60kgs!",
-          images: ["wee2.png", "wee3.png", "wee4.png", "wee5.png", "wee1.png", "wee.png"],
+          images: ["wee2.png", "wee3.png", "wee5.png", "wee4.png", "wee1.png", "wee.png"],
           link: 'https://example.com/project3'
         },
 
@@ -161,7 +160,17 @@ function openPopup(projectId) {
         popup.style.display = 'flex';
     }
 }
+let mysBtn = document
+    .getElementById('scrollbuttonid');
 
+window.addEventListener('scroll', function () {
+    if (document.body.scrollTop > 20
+        || document.documentElement.scrollTop > 20) {
+        mysBtn.style.display = 'block';
+    } else {
+        mysBtn.style.display = 'none';
+    }
+});
 
 
 function closePopup() {
