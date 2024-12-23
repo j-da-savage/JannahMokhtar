@@ -1,4 +1,3 @@
-// JavaScript for Popup Functionality
 function openPopup(projectId) {
     const popup = document.getElementById('popup');
     const popupDetails = document.getElementById('popup-details');
