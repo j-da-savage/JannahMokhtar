@@ -5,8 +5,9 @@ function openPopup(projectId) {
     const projects = {
         project1: {
             title: 'Platonic Chains, IMA NYU',
-            description: '"Platonic Chains" is a large scale kinetic installation. A web of chains in constant reciprocating motion that viewers may navigate through. Metal trinkets and hardware hung from the industrial chain create sound when hit with the floor and the chain itself. The motion aspect was created using a winch connected to the chains, controlled by a remote control with its buttons being controlled by a linear actuator connected to an Arduino, controlling the movements of the chains. ',
+            description: '"Platonic Chains" is a large-scale kinetic installation, a web of chains in constant reciprocating motion that viewers may navigate through. Metal trinkets and hardware hung from the industrial chain create sound when hit with the floor and the chain itself. The motion aspect was created using a winch connected to the chains, controlled by a remote control with its buttons controlled by a linear actuator connected to an Arduino, controlling the movements of the chains.',
             images: ['platonicChains.jpg', 'platonic1.jpg', 'platonic2.jpg', 'platonic3.jpg','platonic4.jpg', 'platonic5.JPEG', 'platonic6.jpg'],
+            video: 'PlatonicChains.mov',
             hasDocumentation: true,
             link: 'https://itp.nyu.edu/shows/spring2024//projects/#10899-platonic-chains'
         },
@@ -20,17 +21,19 @@ function openPopup(projectId) {
         },
 
         project3:{
-          title: 'Fifi, the dancing cactus robot, Performing Robots Class',
-          description: "As part of the class 'Performing Robots', a classmate and I created a dancing and talking robot, Fifi. Fifi is a robot with a wooden and metal base, movement and talking controlled by servo motors, connected to Ardunios and an H-bridge, while the movement of the base was controlled a Hobby RC shield and remote control which we coded. The project was part of NYUAD's Interactive Media Showcase and performance in Fall 2023 ",
-          images: ['fifiStage.jpg', 'fifiPIC.jpeg', 'fifi.png', 'fifi.MOV'],
+          title: 'Fifi, the Dancing Cactus Robot!',
+          description: "As part of the class 'Performing Robots', a classmate and I created a dancing and talking robot, Fifi. Fifi is a robot with a wooden and metal base, movement and talking are controlled by servo motors, connected to Ardunios and an H-bridge, while the movement of the base was controlled a Hobby RC shield and remote control which we coded. The project was part of NYUAD's Interactive Media Showcase and performance in Fall 2023. Both my classmate and I contributed equally to creating the robot, namely in writing the C++ code for the different roles of the Arduino(s) (moving the body of the robot, moving the base, controlling the remote control, controlling the LED lights, controlling the sound and mouth movement), building the robot base, and attaching the different parts like the wheels; metal body; servo motors. I was also in charge of writing, recording, and editing Fifi's script for the performance piece. ",
+          images: ['fifiStage.jpg', 'fifiPIC.jpeg', 'fifi.png'],
+          video: 'Fifi_Robot.mov',
           hasDocumentation: true,
           link: 'https://github.com/j-da-savage/Performing-robots'
         },
 
         project4:{
           title: 'TouchDesigner Abstract Soundscape',
-          description: "This is a simple network made out of a simple network to make abstract fluid simulations using Touch Designer. The visuals were paired with a soundscape made with Audacity for my work-in-progress capstone project. It represents the sounds of a typical egyptian family's kitchen, while reminiscing memories of the past.",
-          images: ['touch.png', 'touch1.png', 'touch2.png', 'touch3.png'],
+          description: "This is a simple network made out of abstract fluid simulations using Touch Designer. The visuals were paired with a soundscape made with Audacity for my work-in-progress capstone project. It represents the sounds of a typical egyptian family's kitchen, while reminiscing memories of the past.",
+          images: ['touch.png', 'touch2.png', 'touch3.png'],
+          video: 'touchVid.mov',
           hasDocumentation: true,
           link: 'https://drive.google.com/file/d/1HdaYAFT0Ow3YDNyYAbnuU-7MQ9007TIL/view?usp=sharing'
         },
@@ -44,13 +47,14 @@ function openPopup(projectId) {
 
         project6:{
           title: 'AI Chatbot, "Creative Fairy Chatbot"',
-          description: "The goal of the project is to explore the role of data in the creation of Conversational AI. Using p5.js, RiTa.js, p5.speech, and OpenAI API, this chatbot is a creative assistant meant to help artists and creatives in brainstorming ideas for their projects.",
+          description: "The goal of this project is to explore the role of data in the creation of conversational AI. Using p5.js, RiTa.js, p5.speech, and OpenAI API, this chatbot is a creative assistant meant to help artists and creatives brainstorm ideas for their projects, providing them with assistance in coming up with ideas, as well as giving them a space to sketch out their thoughts.",
           images: ['fairyChatbot1.jpg'],
+          video: 'AI Creative Fairy Chatbot.mov',
           hasDocumentation: false
         },
 
         project7:{
-          title: 'AI Chatbot, "Love-island(ish)',
+          title: 'AI Chatbot, "Love-island(ish)"',
           description: "This chatbot was created based on scripts from the show 'Love Island', and analyzed by ml.js.",
           images: ['island.png','island1.png','island2.png','island3.png','island4.png','island5.png'],
           hasDocumentation: true,
@@ -67,7 +71,7 @@ function openPopup(projectId) {
 
         project9:{
           title: 'weee chair, NYUAD',
-          description: "The weeeChair was fully designed and built by me for the class 'Utilitas, Venustas, Firmitas. The WeeeChair is a playful, multi-audience furniture piece designed to bridge generational gaps by combining functionality with fun. Inspired by childhood memories, it integrates a slide into a sophisticated design that suits both children and adults. With vibrant colors and a refined aesthetic, the WeeeChair fosters interaction and connection in shared spaces, blending cultural storytelling with innovative design principles. The chair was designed on Adobe Illustrator and its wooden pieces were cut using a waterjet cutter, then assembled and painted by me. The wooden chair supports up to 60kgs!",
+          description: "The weeeChair was fully designed and built by me for the class 'Utilitas, Venustas, Firmitas. The WeeeChair is a playful, multi-audience furniture piece designed to bridge generational gaps by combining functionality with fun. Inspired by childhood memories, it integrates a slide into a sophisticated design that suits both children and adults. With vibrant colors and a refined aesthetic, the WeeeChair fosters interaction and connection in shared spaces, blending cultural storytelling with innovative design principles. The chair was designed in Adobe Illustrator and its wooden pieces were cut using a waterjet cutter, then assembled and painted by me. The wooden chair supports up to 60kgs!",
           images: ["wee2.png", "wee3.png", "wee5.png", "wee4.png", "wee1.png", "wee.png"],
           hasDocumentation: true,
           link: 'https://drive.google.com/file/d/12Zvfl0PQ_8u2edfwUcd0C_faIW6Mh7fm/view?usp=sharing'
@@ -75,22 +79,22 @@ function openPopup(projectId) {
 
         project10:{
           title: 'Interactive Media Capstone Project work-in-progress',
-          description: "[WORK IN PROGRESS] Sofra is an interactive installation that explores identity and nostalgia through the universal language of food. Set in a white kitchen, it uses storytelling and projections to bring this blank canvas to life. Sofra utilizes everyday objects to connect people to personal and cultural interpretations of memory and food. Through the experience, the user gets to see a part of the main character Yasmine’s life, and her struggles as she tries to reconnect with her childhood, family, and friends through food.",
+          description: "[WORK IN PROGRESS]  Sofra is an interactive installation that explores identity and nostalgia through the universal language of food. Set in a white kitchen, it uses storytelling and projections to bring this blank canvas to life. Sofra utilizes everyday objects to connect people to personal and cultural interpretations of memory and food. Through the experience, the user gets to see a part of the main character, Yasmine’s life and her struggles as she tries to reconnect with her childhood, family, and friends through food. Utilizing technologies like projections (made using TouchDesigner), microcontrollers and sensors, and sound, we aim to create an immersive environment through which the users will get to reflect on their own childhoods and memories by discovering the story of Yasmine.",
           images: ['capstone.png','capstone2.png','capstone3.png','capstone5.png','capstone4.png','capstone6.png'],
           hasDocumentation: true,
           link: 'https://messy-pantydraco-e47.notion.site/Capstone-Blog-Jannah-and-Dania-4c6625486d2343c5ae0deed430df2f9e?pvs=4'
         },
 
         project11:{
-          title: 'Audiovisual Interactive Installation with Max MSP, Ableton Live, and Arduino',
-          description: "Created on Max MSP and Ableton Live, conncected to an ultrasonic distance sensor, this is an interactive generative audiovisual installation where generative music drives real-time graphics, and user input alters the behavior of both sound and visuals, creating a responsive and immersive environment. It was made as the final project for the class 'Computational Approaches to Music and Audio'. ",
+          title: 'Audiovisual Interactive Installation',
+          description: "Created on Max MSP and Ableton Live, connected to an ultrasonic distance sensor connected to an Arduino, this is an interactive generative audiovisual installation where generative music drives real-time graphics, and user input alters the behavior of both sound and visuals, creating a responsive and immersive environment. It was made as the final project for the class 'Computational Approaches to Music and Audio'. ",
           images: ['cama.png','cama1.png', 'cama2.png','cama3.png'],
           hasDocumentation: false
         },
 
         project12:{
           title: 'p5.js Internet Manifesto',
-          description: "“Better Internet Art For a Better World” is an interactive page on p5.js, inspired by Dirk Paesmans art collective “Jodi”. This piece, created for the class “Understanding Interactive Media”, is our very own internet art manifesto, which invites users to engage with the internet as both a medium and a space for artistic expression, while maintaing the core values of internet art.",
+          description: "“Better Internet Art For a Better World” is an interactive page on p5.js, inspired by Dirk Paesmans art collective “Jodi”. This piece, created for the class “Understanding Interactive Media”, is an internet art manifesto, which invites users to engage with the internet as both a medium and a space for artistic expression, while maintaining the core values of internet art.",
           images: ['manifesto.png','manifesto1.png','manifesto2.png','manifesto3.png'],
           hasDocumentation: true,
           link: 'https://docs.google.com/document/d/1DAt43RyifCFZwcRrcUGrnG2YSnyqZ7EfUOJwOBBW2KM/edit?usp=sharing'
@@ -114,8 +118,9 @@ function openPopup(projectId) {
 
         project15:{
           title: 'Interactive Media Wonderland',
-          description: "'Interactive Media Wonderland' is a VR project created on styly.cc respresenting an environment of interrelatted interactive media art works, and displaying them in different ways. The project was part of NYUAD's Interactive Media Showcase, Spring 2023.",
+          description: "'Interactive Media Wonderland' is a VR project representing an environment of interrelated interactive media artworks, and displaying them in different ways. The project was part of NYUAD's Interactive Media Showcase, Spring 2023.",
           images: ['IMwonderland3.png','IMwonderland.png', 'IMwonderland1.png', 'IMwonderland2.png'],
+          video: 'VR Exhibit Walkthrough.mov',
           hasDocumentation: true,
           link: 'https://gallery.styly.cc/scene/46cc07f2-43d7-4f96-9dc3-d5ed48fd9069'
         },
@@ -130,7 +135,7 @@ function openPopup(projectId) {
 
         project17:{
           title: '"Cooking Baba", Interactive Cooking Game',
-          description: "Cooking Baba is an interactive cooking game made on p5.js, controlled by Arduino and C++, and using Computer Vision (OpenCV). This game was my final project for the class 'Introduction to Interactive Media'. Alongside my team member, we first coded the game and made our own visuals and graphics using p5.js, Adobe Illustrator, Adobe Photoshop, and more. The physical aspect of the game included several sensors, such as an accelerometer, force sensor, potentiometer, and buttons. The computer-camera connection was made using Computer Vision, which we manipulated to fit our game and create a smooth user experience.",
+          description: "Cooking Baba is an interactive cooking game made on p5.js, controlled by Arduino and C++, and using Computer Vision (OpenCV). This game was my final project for the class 'Introduction to Interactive Media'. Alongside my colleague, we first coded the game and made our own visuals and graphics using p5.js, Adobe Illustrator, Adobe Photoshop, and more. The physical aspect of the game included several sensors, such as an accelerometer, force sensor, potentiometer, and buttons. The computer-camera connection was made using Computer Vision, which we manipulated to fit our game and create a smooth user experience.",
           images: ['cookingBaba.png','cooking1.png','cooking2.png','cooking3.png','cooking4.png'],
           hasDocumentation: true,
           link: 'https://github.com/daniaezz/Intro-to-IM-Final-Project'
@@ -148,6 +153,7 @@ function openPopup(projectId) {
           title: '"Pixel Race", p5.js Multiplayer Game',
           description: "“Pixel Race” is a two-player game in which each player, a unicorn and a horse, has to collect all their designated items, rainbows and hay-bails, before the other player. The winner is whoever collects 20 items before the other player. This was one of the first projects I made using p5.js",
           images: ['pixelGame.png',"pixel1.png"],
+          video: 'PixelRaceVid.mov',
           hasDocumentation: true,
           link: 'https://editor.p5js.org/j-da-savage/full/p3-SDJlZo'
         },
@@ -165,23 +171,84 @@ function openPopup(projectId) {
 
     const project = projects[projectId];
 
-      if (project) {
-          let content = `
-              <h2>${project.title}</h2>
-              <p>${project.description}</p>
-              <div class="popup-images">
-                  ${project.images.map(img => `<img src="${img}" alt="${project.title} image">`).join('')}
-              </div>
-              ${project.hasDocumentation ? `<a href="${project.link}" target="_blank">View Documentation</a>` : ''}
-          `;
-          popupDetails.innerHTML = content;
-          popup.style.display = 'flex';
-      }
-  }
+    if (project) {
+        let imagesContent = '';
+        let videosContent = '';
 
+        // First handle all images
+        project.images.forEach(img => {
+            const fileExtension = img.split('.').pop().toLowerCase();
 
+            if (fileExtension !== 'mov') {
+                imagesContent += `<img src="${img}" alt="${project.title} image">`;
+            }
+        });
+
+        // Then handle all videos
+        if (project.video) {
+            videosContent += `
+                <video controls>
+                    <source src="${project.video}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>`;
+        }
+
+        // Add MOV files from images array
+        project.images.forEach(img => {
+            const fileExtension = img.split('.').pop().toLowerCase();
+
+            if (fileExtension === 'mov') {
+                videosContent += `
+                    <video controls>
+                        <source src="${img}" type="video/quicktime">
+                        Your browser does not support the video tag.
+                    </video>`;
+            }
+        });
+
+        let content = `
+            <h2>${project.title}</h2>
+            <p>${project.description}</p>
+            <div class="popup-images">
+                ${imagesContent}
+                ${videosContent}
+            </div>
+            ${project.hasDocumentation ? `<a href="${project.link}" target="_blank">View Documentation</a>` : ''}`;
+
+        popupDetails.innerHTML = content;
+        popup.style.display = 'flex';
+
+        // Add click event listener to close popup when clicking outside
+        popup.onclick = function(event) {
+            if (event.target === popup) {
+                closePopup();
+            }
+        };
+    }
+}
 
 function closePopup() {
     const popup = document.getElementById('popup');
+
+    // Pause all videos when closing the popup
+    const videos = popup.getElementsByTagName('video');
+    Array.from(videos).forEach(video => {
+        if (video) {
+            video.pause();
+        }
+    });
+
     popup.style.display = 'none';
 }
+
+// When the page loads, add event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('popup');
+
+    // Add escape key functionality
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closePopup();
+        }
+    });
+});
