@@ -163,75 +163,108 @@ project20: {
    hasDocumentation: true,
    link: 'https://github.com/j-da-savage/Introduction-to-Interactive-Media/blob/main/Musical%20Instrument/Documentation.md'
 }
-    };
+};
 
-    const project = projects[projectId];
+  const project = projects[projectId];
 
-      if (project) {
-          let imagesContent = '';
-          let videosContent = '';
-
-          if (project.images && Array.isArray(project.images)) {
-              project.images.forEach(img => {
-                  if (img) {
-                      const fileExtension = img.split('.').pop().toLowerCase();
-                      const imgPath = `./${img}`;
-
-                      if (!['mov', 'mp4', 'webm'].includes(fileExtension)) {
-                          imagesContent += `
-                              <img
-                                  src="${imgPath}"
-                                  alt="${project.title} image"
-                                  onerror="this.onerror=null; this.src='placeholder.jpg'; console.error('Failed to load image:', '${imgPath}');"
-                              >`;
-                      }
-                  }
-              });
-          }
-
-          if (project.video) {
-              const videoPath = `./${project.video}`;
-              const videoExtension = project.video.split('.').pop().toLowerCase();
-
-              // Map common video formats to MIME types
-              const mimeTypes = {
-                  'mov': 'video/quicktime',
-                  'mp4': 'video/mp4',
-                  'webm': 'video/webm'
-              };
-
-              videosContent += `
-                  <video
-                      controls
-                      preload="metadata"
-                      playsinline
-                      onerror="console.error('Failed to load video:', '${videoPath}')"
-                  >
-                      <source src="${videoPath}" type="${mimeTypes[videoExtension] || 'video/mp4'}">
-                      <source src="${videoPath.replace(/\.[^/.]+$/, '.mp4')}" type="video/mp4">
-                      Your browser does not support the video tag.
-                  </video>`;
-          }
-
-          let content = `
-              <h2>${project.title}</h2>
-              <p>${project.description}</p>
-              <div class="popup-images">
-                  ${imagesContent}
-                  ${videosContent}
-              </div>
-              ${project.hasDocumentation ? `<p class="documentation-link"><a href="${project.link}" target="_blank">View Documentation</a></p>` : ''}`;
-
-          popupDetails.innerHTML = content;
-          popup.style.display = 'flex';
-
-          // Add event listener for closing popup when clicking outside
-          popup.onclick = function(event) {
-              if (event.target === popup) {
-                  closePopup();
-              }
-          };
-      } else {
-          console.error('Project not found:', projectId);
-      }
+  if (!project) {
+      console.error('Project not found:', projectId);
+      return;
   }
+
+  // Create popup content
+  const imagesContent = createImagesContent(project);
+  const videosContent = createVideosContent(project);
+
+  const content = `
+      <h2>${project.title}</h2>
+      <p>${project.description}</p>
+      <div class="popup-images">
+          ${imagesContent}
+          ${videosContent}
+      </div>
+      ${project.hasDocumentation ?
+          `<p class="documentation-link">
+              <a href="${project.link}" target="_blank">View Documentation</a>
+          </p>` :
+          ''}`;
+
+  popupDetails.innerHTML = content;
+  popup.style.display = 'flex';
+
+  // Add click handler to close on background click
+  popup.onclick = function(event) {
+      if (event.target === popup) {
+          closePopup();
+      }
+  };
+}
+
+function closePopup() {
+  const popup = document.getElementById('popup');
+  if (!popup) return;
+
+  // Pause all videos when closing
+  const videos = popup.getElementsByTagName('video');
+  Array.from(videos).forEach(video => {
+      if (video) {
+          video.pause();
+      }
+  });
+
+  popup.style.display = 'none';
+}
+
+function createImagesContent(project) {
+  if (!project.images || !Array.isArray(project.images)) {
+      return '';
+  }
+
+  return project.images
+      .filter(img => {
+          if (!img) return false;
+          const fileExtension = img.split('.').pop().toLowerCase();
+          return !['mov', 'mp4', 'webm'].includes(fileExtension);
+      })
+      .map(img => `
+          <img
+              src="./${img}"
+              alt="${project.title} image"
+              onerror="this.onerror=null; this.src='placeholder.jpg'; console.error('Failed to load image:', '${img}');"
+          >
+      `).join('');
+}
+
+function createVideosContent(project) {
+  if (!project.video) {
+      return '';
+  }
+
+  const videoPath = `./${project.video}`;
+  const videoExtension = project.video.split('.').pop().toLowerCase();
+
+  const mimeTypes = {
+      'mov': 'video/quicktime',
+      'mp4': 'video/mp4',
+      'webm': 'video/webm'
+  };
+
+  return `
+      <video
+          controls
+          preload="metadata"
+          playsinline
+          onerror="console.error('Failed to load video:', '${videoPath}')"
+      >
+          <source src="${videoPath}" type="${mimeTypes[videoExtension] || 'video/mp4'}">
+          <source src="${videoPath.replace(/\.[^/.]+$/, '.mp4')}" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>`;
+}
+
+// Add keyboard event listener for ESC key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+      closePopup();
+  }
+});
