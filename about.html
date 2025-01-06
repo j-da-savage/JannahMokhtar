@@ -42,7 +42,7 @@
         .about-container {
               max-width: 1200px;
               margin: 0 auto;
-              padding: 0 20px; /* Add horizontal padding */
+              padding: 0 20px; 
               flex: 1;
           }
 
@@ -82,14 +82,12 @@
             margin-bottom: 30px;
         }
 
-
         .action-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-bottom: 40px;
         }
-
 
         .action-image {
               width: 100%;
@@ -111,7 +109,6 @@
                       gap: 10px;
                   }
 
-
         .image-caption {
             text-align: center;
             font-family: "hanken-grotesk", sans-serif;
@@ -121,14 +118,12 @@
             padding: 0 10px;
         }
 
-
-
         footer {
             background-color: #E6DCC6;
             color: #333;
             margin-top: auto;
             width: 100%;
-            padding: 0; /* Optional if you want no extra padding outside the content */
+            padding: 0; 
         }
 
         .footer-content {
@@ -142,62 +137,60 @@
             padding: 20px;
         }
 
+        .contact-info {
+            font-family: "hanken-grotesk", sans-serif;
+        }
 
-                .contact-info {
-                    font-family: "hanken-grotesk", sans-serif;
-                }
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+        }
 
-                .contact-info a {
-                    color: #333;
-                    text-decoration: none;
-                }
+        .contact-info a:hover {
+            color: #DA498D;
+        }
 
-                .contact-info a:hover {
-                    color: #DA498D;
-                }
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
 
-                .social-links {
-                    display: flex;
-                    gap: 20px;
-                }
+        .social-links a {
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
 
-                .social-links a {
-                    color: #333;
-                    text-decoration: none;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    transition: color 0.3s ease;
-                }
+        .social-links a:hover {
+            color: #DA498D;
+        }
 
-                .social-links a:hover {
-                    color: #DA498D;
-                }
+        .social-links svg {
+            width: 24px;
+            height: 24px;
+        }
 
-                .social-links svg {
-                    width: 24px;
-                    height: 24px;
-                }
+        @media (max-width: 768px) {
+            .intro-section {
+                flex-direction: column;
+            }
 
-                @media (max-width: 768px) {
-                    .intro-section {
-                        flex-direction: column;
-                    }
+            .profile-image, .about-text {
+                width: 100%;
+            }
 
-                    .profile-image, .about-text {
-                        width: 100%;
-                    }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
 
-                    .footer-content {
-                        flex-direction: column;
-                        text-align: center;
-                    }
-
-                    .social-links {
-                        justify-content: center;
-                    }
-                }
-
+            .social-links {
+                justify-content: center;
+            }
+        }
 
     </style>
 </head>
@@ -209,7 +202,7 @@
     <div class="about-container">
          <div class="intro-section">
              <div class="profile-image">
-                 <img src="moi!.png" alt="Jannah's Profile Picture">
+                 <img src="Media/moi!.png" alt="Jannah's Profile Picture">
              </div>
              <div class="about-text">
                  <h2>About Me</h2>
@@ -224,36 +217,36 @@
          <div class="action-section">
              <h2>Jannah in Action!</h2>
              <div class="action-grid">
-           <div class="image-container">
-               <img src="action1.JPG" alt="Jannah working on a project" class="action-image">
-               <p class="image-caption">drilling!</p>
-           </div>
-           <div class="image-container">
-               <img src="action2.jpg" alt="Jannah at an exhibition" class="action-image">
-               <p class="image-caption">weeeChair photo sesh</p>
-           </div>
-           <div class="image-container">
-               <img src="action3.jpeg" alt="Jannah presenting" class="action-image">
-               <p class="image-caption">Platonic Chains ⛓️</p>
-           </div>
-           <div class="image-container">
-               <img src="action4.png" alt="Jannah in the studio" class="action-image">
-               <p class="image-caption">presenting weeeChair</p>
-           </div>
-           <div class="image-container">
-                          <img src="action5.jpg" alt="Jannah at Louvre Abu Dhabi" class="action-image">
+               <div class="image-container">
+                   <img src="Media/action1.JPG" alt="Jannah working on a project" class="action-image">
+                   <p class="image-caption">drilling!</p>
+               </div>
+               <div class="image-container">
+                   <img src="Media/action2.jpg" alt="Jannah at an exhibition" class="action-image">
+                   <p class="image-caption">weeeChair photo sesh</p>
+               </div>
+               <div class="image-container">
+                   <img src="Media/action3.jpeg" alt="Jannah presenting" class="action-image">
+                   <p class="image-caption">Platonic Chains ⛓️</p>
+               </div>
+               <div class="image-container">
+                   <img src="Media/action4.png" alt="Jannah in the studio" class="action-image">
+                   <p class="image-caption">presenting weeeChair</p>
+               </div>
+               <div class="image-container">
+                          <img src="Media/action5.jpg" alt="Jannah at Louvre Abu Dhabi" class="action-image">
                           <p class="image-caption">working at the IM Lab</p>
                       </div>
                       <div class="image-container">
-                          <img src="action6.png" alt="Jannah with Fifi Robot" class="action-image">
+                          <img src="Media/action6.png" alt="Jannah with Fifi Robot" class="action-image">
                           <p class="image-caption">presenting a VR experience</p>
                       </div>
                       <div class="image-container">
-                          <img src="action7.png" alt="Jannah working on VR" class="action-image">
+                          <img src="Media/action7.png" alt="Jannah working on VR" class="action-image">
                           <p class="image-caption">painting weeeChair</p>
                       </div>
                       <div class="image-container">
-                          <img src="action8.jpeg" alt="Jannah at capstone" class="action-image">
+                          <img src="Media/action8.jpeg" alt="Jannah at capstone" class="action-image">
                           <p class="image-caption">IM Showcase 2023! </p>
                       </div>
                   </div>
@@ -275,9 +268,7 @@
                 </a>
                 <a href="https://www.linkedin.com/in/jannah-mokhtar-63a833214/" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2h-2V8h6V4h-6A4 4 0 0 0 12 8V4H8v4h6v7h-2a2 2 0 0 0-2 2v7H2v-7a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6z"></path>
                     </svg>
                     LinkedIn
                 </a>
