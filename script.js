@@ -2,6 +2,11 @@ function openPopup(projectId) {
     const popup = document.getElementById('popup');
     const popupDetails = document.getElementById('popup-details');
 
+    if (!popup || !popupDetails) {
+        console.error('Popup elements not found');
+        return;
+    }
+
     const projects = {
       project1: {
        title: 'Platonic Chains, IMA NYU',
@@ -162,80 +167,77 @@ project20: {
 
     const project = projects[projectId];
 
-    if (project) {
-        let imagesContent = '';
-        let videosContent = '';
+   if (project) {
+       let imagesContent = '';
+       let videosContent = '';
 
-        project.images.forEach(img => {
-            const fileExtension = img.split('.').pop().toLowerCase();
-            const imgPath = `./${img}`; // Add relative path
+       if (project.images && Array.isArray(project.images)) {
+           project.images.forEach(img => {
+               if (img) {
+                   const fileExtension = img.split('.').pop().toLowerCase();
+                   const imgPath = `./${img}`; // Add relative path
 
-            if (fileExtension !== 'mov') {
-                imagesContent += `
-                    <img
-                        src="${imgPath}"
-                        alt="${project.title} image"
-                        onerror="this.onerror=null; this.src='placeholder.jpg'; console.error('Failed to load image:', '${imgPath}');"
-                    >`;
-            }
+                   if (fileExtension !== 'mov') {
+                       imagesContent += `
+                           <img
+                               src="${imgPath}"
+                               alt="${project.title} image"
+                               onerror="this.onerror=null; this.src='placeholder.jpg'; console.error('Failed to load image:', '${imgPath}');"
+                           >`;
+                   }
+               }
+           });
+       }
 
-            if (fileExtension === 'mov') {
-                videosContent += `
-                    <video controls onerror="console.error('Failed to load video:', '${imgPath}');">
-                        <source src="${imgPath}" type="video/quicktime">
-                        Your browser does not support the video tag.
-                    </video>`;
-            }
-        });
+       if (project.video) {
+           const videoPath = `./${project.video}`;
+           videosContent += `
+               <video controls onerror="console.error('Failed to load video:', '${videoPath}');">
+                   <source src="${videoPath}" type="video/quicktime">
+                   Your browser does not support the video tag.
+               </video>`;
+       }
 
-        if (project.video) {
-            const videoPath = `./${project.video}`;
-            videosContent += `
-                <video controls onerror="console.error('Failed to load video:', '${videoPath}');">
-                    <source src="${videoPath}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>`;
-        }
+       let content = `
+           <h2>${project.title}</h2>
+           <p>${project.description}</p>
+           <div class="popup-images">
+               ${imagesContent}
+               ${videosContent}
+           </div>
+           ${project.hasDocumentation ? `<a href="${project.link}" target="_blank">View Documentation</a>` : ''}`;
 
-        let content = `
-            <h2>${project.title}</h2>
-            <p>${project.description}</p>
-            <div class="popup-images">
-                ${imagesContent}
-                ${videosContent}
-            </div>
-            ${project.hasDocumentation ? `<a href="${project.link}" target="_blank">View Documentation</a>` : ''}`;
+       popupDetails.innerHTML = content;
+       popup.style.display = 'flex';
 
-        popupDetails.innerHTML = content;
-        popup.style.display = 'flex';
-
-        popup.onclick = function(event) {
-            if (event.target === popup) {
-                closePopup();
-            }
-        };
-    }
+       // Add event listener for closing popup when clicking outside
+       popup.onclick = function(event) {
+           if (event.target === popup) {
+               closePopup();
+           }
+       };
+   } else {
+       console.error('Project not found:', projectId);
+   }
 }
 
 function closePopup() {
-    const popup = document.getElementById('popup');
+   const popup = document.getElementById('popup');
+   if (!popup) return;
 
-    const videos = popup.getElementsByTagName('video');
-    Array.from(videos).forEach(video => {
-        if (video) {
-            video.pause();
-        }
-    });
+   const videos = popup.getElementsByTagName('video');
+   Array.from(videos).forEach(video => {
+       if (video) {
+           video.pause();
+       }
+   });
 
-    popup.style.display = 'none';
+   popup.style.display = 'none';
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const popup = document.getElementById('popup');
-
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closePopup();
-        }
-    });
+// Add keyboard event listener for ESC key
+document.addEventListener('keydown', function(event) {
+   if (event.key === 'Escape') {
+       closePopup();
+   }
 });
