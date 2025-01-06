@@ -6,8 +6,8 @@ function openPopup(projectId) {
         project1: {
             title: 'Platonic Chains, IMA NYU',
             description: '"Platonic Chains" is a large-scale kinetic installation, a web of chains in constant reciprocating motion that viewers may navigate through. Metal trinkets and hardware hung from the industrial chain create sound when hit with the floor and the chain itself. The motion aspect was created using a winch connected to the chains, controlled by a remote control with its buttons controlled by a linear actuator connected to an Arduino, controlling the movements of the chains.',
-            images: ['platonicChains.jpg', 'platonic1.jpg', 'platonic2.jpg', 'platonic3.jpg','platonic4.jpg', 'platonic5.JPEG', 'platonic6.jpg'],
-            video: 'PlatonicChains.mov',
+            images: ['platonicChains.jpg', 'platonic1.jpg', 'platonic2.jpg', 'platonic3.jpg','platonic4.jpg', 'platonic5.JPEG', 'platonic6.JPG'],
+            video: 'PlatonicChains1.mov',
             hasDocumentation: true,
             link: 'https://itp.nyu.edu/shows/spring2024//projects/#10899-platonic-chains'
         },
@@ -33,7 +33,7 @@ function openPopup(projectId) {
           title: 'TouchDesigner Abstract Soundscape',
           description: "This is a simple network made out of abstract fluid simulations using Touch Designer. The visuals were paired with a soundscape made with Audacity for my work-in-progress capstone project. It represents the sounds of a typical egyptian family's kitchen, while reminiscing memories of the past.",
           images: ['touch.png', 'touch2.png', 'touch3.png'],
-          video: 'touchVid.mov',
+          video: 'touchVid1.mov',
           hasDocumentation: true,
           link: 'https://drive.google.com/file/d/1HdaYAFT0Ow3YDNyYAbnuU-7MQ9007TIL/view?usp=sharing'
         },
@@ -49,7 +49,7 @@ function openPopup(projectId) {
           title: 'AI Chatbot, "Creative Fairy Chatbot"',
           description: "The goal of this project is to explore the role of data in the creation of conversational AI. Using p5.js, RiTa.js, p5.speech, and OpenAI API, this chatbot is a creative assistant meant to help artists and creatives brainstorm ideas for their projects, providing them with assistance in coming up with ideas, as well as giving them a space to sketch out their thoughts.",
           images: ['fairyChatbot1.jpg'],
-          video: 'AI Creative Fairy Chatbot.mov',
+          video: 'AI Creative Fairy Chatbot1.mov',
           hasDocumentation: false
         },
 
@@ -120,7 +120,7 @@ function openPopup(projectId) {
           title: 'Interactive Media Wonderland',
           description: "'Interactive Media Wonderland' is a VR project representing an environment of interrelated interactive media artworks, and displaying them in different ways. The project was part of NYUAD's Interactive Media Showcase, Spring 2023.",
           images: ['IMwonderland3.png','IMwonderland.png', 'IMwonderland1.png', 'IMwonderland2.png'],
-          video: 'VR Exhibit Walkthrough.mov',
+          video: 'VR Exhibit Walkthrough1.mov',
           hasDocumentation: true,
           link: 'https://gallery.styly.cc/scene/46cc07f2-43d7-4f96-9dc3-d5ed48fd9069'
         },
