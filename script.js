@@ -168,24 +168,31 @@ project20: {
 
         project.images.forEach(img => {
             const fileExtension = img.split('.').pop().toLowerCase();
+            const imgPath = `./${img}`; // Add relative path
 
             if (fileExtension !== 'mov') {
-                imagesContent += `<img src="${img}" alt="${project.title} image">`;
+                imagesContent += `
+                    <img
+                        src="${imgPath}"
+                        alt="${project.title} image"
+                        onerror="this.onerror=null; this.src='placeholder.jpg'; console.error('Failed to load image:', '${imgPath}');"
+                    >`;
             }
 
             if (fileExtension === 'mov') {
                 videosContent += `
-                    <video controls>
-                        <source src="${img}" type="video/quicktime">
+                    <video controls onerror="console.error('Failed to load video:', '${imgPath}');">
+                        <source src="${imgPath}" type="video/quicktime">
                         Your browser does not support the video tag.
                     </video>`;
             }
         });
 
         if (project.video) {
+            const videoPath = `./${project.video}`;
             videosContent += `
-                <video controls>
-                    <source src="${project.video}" type="video/mp4">
+                <video controls onerror="console.error('Failed to load video:', '${videoPath}');">
+                    <source src="${videoPath}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>`;
         }
