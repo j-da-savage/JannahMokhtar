@@ -22,7 +22,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 20px 0;  /* Added top padding */
+    padding: 20px 20px 0; 
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -67,7 +67,7 @@ nav ul li a:hover {
 
 main {
     margin: 0;
-    padding: 40px 20px 20px;  /* Reduced top padding */
+    padding: 40px 20px 20px; 
 }
 
 .scroll {
@@ -110,7 +110,7 @@ main {
 .work-box {
     break-inside: avoid;
     padding: 8px;
-    margin-bottom: 20px;  /* Space between items */
+    margin-bottom: 20px;  
     border-radius: 8px;
     text-align: center;
     cursor: pointer;
@@ -131,7 +131,7 @@ main {
     object-fit: cover;
 }
 
-/* Make it responsive */
+
 @media screen and (max-width: 1200px) {
     #works .works-container {
         columns: 3;
@@ -170,8 +170,8 @@ main {
     width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 20px; /* Space between images vertically */
-    break-inside: avoid; /* Prevent images from breaking across columns */
+    margin-bottom: 20px;
+    break-inside: avoid; 
     border-radius: 8px;
     object-fit: cover;
 }
@@ -179,7 +179,7 @@ main {
 
 @media screen and (max-width: 600px) {
     .popup-images {
-        columns: 1; /* Switch to single column on mobile */
+        columns: 1; 
     }
 }
 
@@ -204,7 +204,7 @@ main {
 .popup-content {
     position: relative;
     background-color: #fff;
-    padding: 0 20px 20px 20px; /* Remove top padding */
+    padding: 0 20px 20px 20px; 
     border-radius: 8px;
     width: 90%;
     max-width: 800px;
@@ -273,9 +273,9 @@ main {
 }
 
 footer {
-    background-color: #E6DCC6; /* Darker shade of #FFF6E3 */
-    color: #333; /* Changed to dark text since background is lighter now */
-    padding: 20px; /* Reduced from 40px to make footer less thick */
+    background-color: #E6DCC6; 
+    color: #333; 
+    padding: 20px; 
     margin-top: auto;
 }
 
@@ -286,7 +286,7 @@ footer {
           justify-content: space-between;
           align-items: center;
           flex-wrap: wrap;
-          gap: 15px; /* Slightly reduced gap */
+          gap: 15px; 
       }
 
 
