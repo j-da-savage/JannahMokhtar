@@ -167,77 +167,90 @@ project20: {
 
     const project = projects[projectId];
 
-   if (project) {
-       let imagesContent = '';
-       let videosContent = '';
+    if (project) {
+        let imagesContent = '';
+        let videosContent = '';
 
-       if (project.images && Array.isArray(project.images)) {
-           project.images.forEach(img => {
-               if (img) {
-                   const fileExtension = img.split('.').pop().toLowerCase();
-                   const imgPath = `./${img}`; // Add relative path
+        // Handle images
+        if (project.images && Array.isArray(project.images)) {
+            project.images.forEach(img => {
+                if (img) {
+                    const fileExtension = img.split('.').pop().toLowerCase();
+                    const imgPath = `./${img}`; 
 
-                   if (fileExtension !== 'mov') {
-                       imagesContent += `
-                           <img
-                               src="${imgPath}"
-                               alt="${project.title} image"
-                               onerror="this.onerror=null; this.src='placeholder.jpg'; console.error('Failed to load image:', '${imgPath}');"
-                           >`;
-                   }
-               }
-           });
-       }
+                    // Only process as image if it's not a video file
+                    if (!['mov', 'mp4', 'webm'].includes(fileExtension)) {
+                        imagesContent += `
+                            <img
+                                src="${imgPath}"
+                                alt="${project.title} image"
+                                onerror="this.onerror=null; this.src='placeholder.jpg'; console.error('Failed to load image:', '${imgPath}');"
+                            >`;
+                    }
+                }
+            });
+        }
 
-       if (project.video) {
-           const videoPath = `./${project.video}`;
-           videosContent += `
-               <video controls onerror="console.error('Failed to load video:', '${videoPath}');">
-                   <source src="${videoPath}" type="video/quicktime">
-                   Your browser does not support the video tag.
-               </video>`;
-       }
+        // Handle project video if it exists
+        if (project.video) {
+            const videoPath = `./${project.video}`;
+            const fileExtension = project.video.split('.').pop().toLowerCase();
+            
+            // Set appropriate MIME type based on file extension
+            const mimeType = {
+                'mov': 'video/quicktime',
+                'mp4': 'video/mp4',
+                'webm': 'video/webm'
+            }[fileExtension] || 'video/mp4';
 
-       let content = `
-           <h2>${project.title}</h2>
-           <p>${project.description}</p>
-           <div class="popup-images">
-               ${imagesContent}
-               ${videosContent}
-           </div>
-           ${project.hasDocumentation ? `<a href="${project.link}" target="_blank">View Documentation</a>` : ''}`;
+            videosContent += `
+                <video controls width="100%" preload="metadata">
+                    <source src="${videoPath}" type="${mimeType}">
+                    <p>Your browser doesn't support this video format. Please try using a modern browser or download the video.</p>
+                </video>`;
+        }
 
-       popupDetails.innerHTML = content;
-       popup.style.display = 'flex';
+        // Handle video files in images array
+        if (project.images && Array.isArray(project.images)) {
+            project.images.forEach(img => {
+                if (img) {
+                    const fileExtension = img.split('.').pop().toLowerCase();
+                    const imgPath = `./${img}`;
 
-       // Add event listener for closing popup when clicking outside
-       popup.onclick = function(event) {
-           if (event.target === popup) {
-               closePopup();
-           }
-       };
-   } else {
-       console.error('Project not found:', projectId);
-   }
+                    if (['mov', 'mp4', 'webm'].includes(fileExtension)) {
+                        const mimeType = {
+                            'mov': 'video/quicktime',
+                            'mp4': 'video/mp4',
+                            'webm': 'video/webm'
+                        }[fileExtension] || 'video/mp4';
+
+                        videosContent += `
+                            <video controls width="100%" preload="metadata">
+                                <source src="${imgPath}" type="${mimeType}">
+                                <p>Your browser doesn't support this video format. Please try using a modern browser or download the video.</p>
+                            </video>`;
+                    }
+                }
+            });
+        }
+
+        let content = `
+            <h2>${project.title}</h2>
+            <p>${project.description}</p>
+            <div class="popup-images">
+                ${imagesContent}
+                ${videosContent}
+            </div>
+            ${project.hasDocumentation ? `<a href="${project.link}" target="_blank">View Documentation</a>` : ''}`;
+
+        popupDetails.innerHTML = content;
+        popup.style.display = 'flex';
+
+        // Add event listener for closing popup when clicking outside
+        popup.onclick = function(event) {
+            if (event.target === popup) {
+                closePopup();
+            }
+        };
+    }
 }
-
-function closePopup() {
-   const popup = document.getElementById('popup');
-   if (!popup) return;
-
-   const videos = popup.getElementsByTagName('video');
-   Array.from(videos).forEach(video => {
-       if (video) {
-           video.pause();
-       }
-   });
-
-   popup.style.display = 'none';
-}
-
-// Add keyboard event listener for ESC key
-document.addEventListener('keydown', function(event) {
-   if (event.key === 'Escape') {
-       closePopup();
-   }
-});
