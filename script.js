@@ -77,9 +77,8 @@ function openPopup(projectId) {
    },
    project10:{
        title: 'Interactive Media Capstone Project work-in-progress',
-       description: "[WORK IN PROGRESS]  Sofra is an interactive installation that explores identity and nostalgia through the universal language of food. Set in a white kitchen, it uses storytelling and projections to bring this blank canvas to life. Sofra utilizes everyday objects to connect people to personal and cultural interpretations of memory and food. Through the experience, the user gets to see a part of their own narrative unfold with the help of technology as a tool for reflection. ",
-       images: ['Media/sofra.png','Media/sofra2.png', 'Media/sofra3.png', 'Media/sofra4.png'],
-       video: 'Media/sofraVid.mp4',
+       description: "[WORK IN PROGRESS]  Sofra is an interactive installation that explores identity and nostalgia through the universal language of food. Set in a white kitchen, it uses storytelling and projections to bring this blank canvas to life. Sofra utilizes everyday objects to connect people to personal and cultural interpretations of memory and food. Through the experience, the user gets to see a part of their own narrative unfold with the help of technology as a tool for reflection.",
+       images: ['Media/capstone2.png', 'Media/capstone3.png', 'Media/capstone.png', 'Media/capstone4.png', 'Media/capstone5.png', 'Media/capstone6.png'],
        hasDocumentation: true,
        link: 'https://drive.google.com/file/d/1Bz7x97F_cQGnEp3bkP7oG8f9zLoRKHQJ/view?usp=sharing'
    },
@@ -244,9 +243,9 @@ function createVideosContent(project) {
   const videoExtension = project.video.split('.').pop().toLowerCase();
 
   const mimeTypes = {
-      'mov': 'video/quicktime',
-      'mp4': 'video/mp4',
-      'webm': 'video/webm'
+      // 'mov': 'video/quicktime',
+      // 'mp4': 'video/mp4',
+      // 'webm': 'video/webm'
   };
 
   return `
