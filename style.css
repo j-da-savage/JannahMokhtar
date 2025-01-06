@@ -22,7 +22,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 20px 0; 
+    padding: 20px 20px 0;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -67,7 +67,7 @@ nav ul li a:hover {
 
 main {
     margin: 0;
-    padding: 40px 20px 20px; 
+    padding: 40px 20px 20px;
 }
 
 .scroll {
@@ -110,7 +110,7 @@ main {
 .work-box {
     break-inside: avoid;
     padding: 8px;
-    margin-bottom: 20px;  
+    margin-bottom: 20px;
     border-radius: 8px;
     text-align: center;
     cursor: pointer;
@@ -171,7 +171,7 @@ main {
     height: auto;
     display: block;
     margin-bottom: 20px;
-    break-inside: avoid; 
+    break-inside: avoid;
     border-radius: 8px;
     object-fit: cover;
 }
@@ -179,7 +179,7 @@ main {
 
 @media screen and (max-width: 600px) {
     .popup-images {
-        columns: 1; 
+        columns: 1;
     }
 }
 
@@ -204,7 +204,7 @@ main {
 .popup-content {
     position: relative;
     background-color: #fff;
-    padding: 0 20px 20px 20px; 
+    padding: 0 20px 20px 20px;
     border-radius: 8px;
     width: 90%;
     max-width: 800px;
@@ -221,6 +221,10 @@ main {
     border-radius: 8px;
 }
 
+.popup-content h2 {
+    margin-bottom: 0.5em;      /* Adds space after headings */
+    margin-top: 0.5em;       /* Adds space before headings */
+}
 
 #popup-details {
     margin-top: 10px;
@@ -253,10 +257,15 @@ main {
 }
 
 .popup-content p{
-  font-family: "hanken-grotesk", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
+      font-family: "hanken-grotesk", sans-serif;
+      font-weight: 800;
+      font-style: normal;
+      line-height: 1.2;
+      /* margin-bottom: 1.2em; */
+      /* max-width: 70ch; */
+      color: #333;
+  }
+
 
 
 
@@ -273,9 +282,9 @@ main {
 }
 
 footer {
-    background-color: #E6DCC6; 
-    color: #333; 
-    padding: 20px; 
+    background-color: #E6DCC6;
+    color: #333;
+    padding: 20px;
     margin-top: auto;
 }
 
@@ -286,7 +295,7 @@ footer {
           justify-content: space-between;
           align-items: center;
           flex-wrap: wrap;
-          gap: 15px; 
+          gap: 15px;
       }
 
 
