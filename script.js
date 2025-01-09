@@ -80,7 +80,7 @@ function openPopup(projectId) {
        description: "[WORK IN PROGRESS]  Sofra is an interactive installation that explores identity and nostalgia through the universal language of food. Set in a white kitchen, it uses storytelling and projections to bring this blank canvas to life. Sofra utilizes everyday objects to connect people to personal and cultural interpretations of memory and food. Through the experience, the user gets to see a part of their own narrative unfold with the help of technology as a tool for reflection.",
        images: ['Media/capstone2.png', 'Media/capstone3.png', 'Media/capstone.png', 'Media/capstone4.png', 'Media/capstone5.png', 'Media/capstone6.png'],
        hasDocumentation: true,
-       link: 'https://drive.google.com/file/d/1Bz7x97F_cQGnEp3bkP7oG8f9zLoRKHQJ/view?usp=sharing'
+       link: 'https://messy-pantydraco-e47.notion.site/Capstone-Blog-Jannah-and-Dania-4c6625486d2343c5ae0deed430df2f9e?pvs=4'
    },
    project11: {
    title: 'Audiovisual Interactive Installation',
