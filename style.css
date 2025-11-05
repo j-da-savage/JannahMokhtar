@@ -22,7 +22,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 20px 0;  /* Added top padding */
+    padding: 20px 20px 0;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -67,7 +67,7 @@ nav ul li a:hover {
 
 main {
     margin: 0;
-    padding: 40px 20px 20px;  /* Reduced top padding */
+    padding: 40px 20px 20px;
 }
 
 .scroll {
@@ -110,7 +110,7 @@ main {
 .work-box {
     break-inside: avoid;
     padding: 8px;
-    margin-bottom: 20px;  /* Space between items */
+    margin-bottom: 20px;
     border-radius: 8px;
     text-align: center;
     cursor: pointer;
@@ -131,7 +131,7 @@ main {
     object-fit: cover;
 }
 
-/* Make it responsive */
+
 @media screen and (max-width: 1200px) {
     #works .works-container {
         columns: 3;
@@ -170,8 +170,8 @@ main {
     width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 20px; /* Space between images vertically */
-    break-inside: avoid; /* Prevent images from breaking across columns */
+    margin-bottom: 20px;
+    break-inside: avoid;
     border-radius: 8px;
     object-fit: cover;
 }
@@ -179,7 +179,7 @@ main {
 
 @media screen and (max-width: 600px) {
     .popup-images {
-        columns: 1; /* Switch to single column on mobile */
+        columns: 1;
     }
 }
 
@@ -204,7 +204,7 @@ main {
 .popup-content {
     position: relative;
     background-color: #fff;
-    padding: 0 20px 20px 20px; /* Remove top padding */
+    padding: 0 20px 20px 20px;
     border-radius: 8px;
     width: 90%;
     max-width: 800px;
@@ -221,6 +221,10 @@ main {
     border-radius: 8px;
 }
 
+.popup-content h2 {
+    margin-bottom: 0.5em;      /* Adds space after headings */
+    margin-top: 0.5em;       /* Adds space before headings */
+}
 
 #popup-details {
     margin-top: 10px;
@@ -253,12 +257,51 @@ main {
 }
 
 .popup-content p{
-  font-family: "hanken-grotesk", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
+      font-family: "hanken-grotesk", sans-serif;
+      font-weight: 800;
+      font-style: normal;
+      line-height: 1.2;
+      /* margin-bottom: 1.2em; */
+      /* max-width: 70ch; */
+      color: #333;
+  }
 
 
+  /* .popup-content p .highlight {
+    font-family: "hanken-grotesk", sans-serif;
+    color: #ff5733;    
+    font-weight: 900;   
+    font-style: italic; 
+  } */
+  
+
+
+  .popup-content p .highlight {
+    font-weight: 900;
+    background: linear-gradient(
+      270deg, 
+      #ff00cc, 
+      #3333ff, 
+      #00ffcc, 
+      #ff9900, 
+      #ff00cc
+    );
+    background-size: 400% 400%;
+    -webkit-background-clip: text;  /* required for Chrome/Safari */
+    background-clip: text;          /* fallback/standards */
+    -webkit-text-fill-color: transparent; /* makes text show the gradient */
+    animation: glowGradient 6s ease infinite;
+    text-shadow: 0 0 8px rgba(255,255,255,0.2);
+  }
+  
+  @keyframes glowGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  
+  
 
 
 .popup-content::-webkit-scrollbar {
@@ -273,9 +316,9 @@ main {
 }
 
 footer {
-    background-color: #E6DCC6; /* Darker shade of #FFF6E3 */
-    color: #333; /* Changed to dark text since background is lighter now */
-    padding: 20px; /* Reduced from 40px to make footer less thick */
+    background-color: #E6DCC6;
+    color: #333;
+    padding: 20px;
     margin-top: auto;
 }
 
@@ -286,7 +329,7 @@ footer {
           justify-content: space-between;
           align-items: center;
           flex-wrap: wrap;
-          gap: 15px; /* Slightly reduced gap */
+          gap: 15px;
       }
 
 
@@ -346,3 +389,33 @@ footer {
                 justify-content: center;
             }
         }
+
+
+
+/* Traditional Subtitle Styling for Popup: Italic and Slightly Bolder */
+.popup-content .popup-subtitle {
+    /* Use the standard body font for elegance */
+    font-family: "hanken-grotesk", sans-serif;
+    
+    /* Make the text italic as requested */
+    font-style: italic; 
+    
+    /* Slightly bolder than default text (400 or 500) but not as bold as the title (900) */
+    font-weight: 700; 
+    
+    /* Set color to the dark grey (#333) for high contrast */
+    color: #333; 
+    
+    /* Keep it slightly smaller than the title but readable */
+    font-size: 1.1em;
+    
+    /* Clean up any residual border/background styles */
+    border-bottom: none;
+    background-color: transparent;
+    
+    /* Add clean spacing: 10px below the title, 20px above the description */
+    margin: 3px 0 10px 0;
+    
+    /* Ensure it behaves like a standard heading */
+    display: block;
+}

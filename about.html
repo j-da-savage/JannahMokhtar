@@ -1,288 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Jannah</title>
-    <link rel="stylesheet" href="https://use.typekit.net/sio7nbn.css">
+    <link rel="stylesheet" href="https://use.typekit.net/sio7nbn.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        html, body {
-            font-family: "sniglet", sans-serif;
-            font-weight: 900;
-            font-style: normal;
-            color: #333;
-            background-color: #FFF6E3;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+      html,
+      body {
+        font-family: "sniglet", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        color: #333;
+        background-color: #fff6e3;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
 
-        header {
-            padding: 20px;
-            text-align: center;
-        }
+      header {
+        padding: 20px;
+        text-align: center;
+      }
 
-        h1 {
-            font-size: 1.8em;
-            cursor: pointer;
-            display: inline-block;
-            transition: color 0.3s ease;
-        }
+      h1 {
+        font-size: 1.8em;
+        cursor: pointer;
+        display: inline-block;
+        transition: color 0.3s ease;
+      }
 
-        h1:hover {
-            color: #DA498D;
-        }
+      h1:hover {
+        color: #da498d;
+      }
 
-        .about-container {
-              max-width: 1200px;
-              margin: 0 auto;
-              padding: 0 20px; /* Add horizontal padding */
-              flex: 1;
-          }
+      .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        flex: 1;
+      }
 
+      .intro-section {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 60px;
+        flex-wrap: wrap;
+      }
+
+      .profile-image {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .profile-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-text {
+        flex: 2;
+        min-width: 300px;
+        font-family: "hanken-grotesk", sans-serif;
+        font-weight: 800;
+        line-height: 1.6;
+      }
+
+      .action-section {
+        margin-top: 40px;
+      }
+
+      .action-section h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .action-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .action-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .action-image:hover {
+        transform: scale(1.05);
+      }
+
+      .image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .image-caption {
+        text-align: center;
+        font-family: "hanken-grotesk", sans-serif;
+        font-size: 0.9em;
+        color: #666;
+        margin-top: -5px;
+        padding: 0 10px;
+      }
+
+      footer {
+        background-color: #e6dcc6;
+        color: #333;
+        margin-top: auto;
+        width: 100%;
+        padding: 0;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .contact-info {
+        font-family: "hanken-grotesk", sans-serif;
+      }
+
+      .contact-info a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      .contact-info a:hover {
+        color: #da498d;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .social-links a {
+        color: #333;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: #da498d;
+      }
+
+      .social-links svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      @media (max-width: 768px) {
         .intro-section {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
+          flex-direction: column;
         }
 
-        .profile-image {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .profile-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
+        .profile-image,
         .about-text {
-            flex: 2;
-            min-width: 300px;
-            font-family: "hanken-grotesk", sans-serif;
-            font-weight: 800;
-            line-height: 1.6;
-        }
-
-        .action-section {
-            margin-top: 40px;
-        }
-
-        .action-section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-
-        .action-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-
-        .action-image {
-              width: 100%;
-              height: 250px;
-              object-fit: cover;
-              border-radius: 10px;
-              transition: transform 0.3s ease;
-              box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-          }
-
-          .action-image:hover {
-              transform: scale(1.05);
-          }
-
-          .image-container {
-                      display: flex;
-                      flex-direction: column;
-                      align-items: center;
-                      gap: 10px;
-                  }
-
-
-        .image-caption {
-            text-align: center;
-            font-family: "hanken-grotesk", sans-serif;
-            font-size: 0.9em;
-            color: #666;
-            margin-top: -5px;
-            padding: 0 10px;
-        }
-
-
-
-        footer {
-            background-color: #E6DCC6;
-            color: #333;
-            margin-top: auto;
-            width: 100%;
-            padding: 0; /* Optional if you want no extra padding outside the content */
+          width: 100%;
         }
 
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            padding: 20px;
+          flex-direction: column;
+          text-align: center;
         }
 
-
-                .contact-info {
-                    font-family: "hanken-grotesk", sans-serif;
-                }
-
-                .contact-info a {
-                    color: #333;
-                    text-decoration: none;
-                }
-
-                .contact-info a:hover {
-                    color: #DA498D;
-                }
-
-                .social-links {
-                    display: flex;
-                    gap: 20px;
-                }
-
-                .social-links a {
-                    color: #333;
-                    text-decoration: none;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    transition: color 0.3s ease;
-                }
-
-                .social-links a:hover {
-                    color: #DA498D;
-                }
-
-                .social-links svg {
-                    width: 24px;
-                    height: 24px;
-                }
-
-                @media (max-width: 768px) {
-                    .intro-section {
-                        flex-direction: column;
-                    }
-
-                    .profile-image, .about-text {
-                        width: 100%;
-                    }
-
-                    .footer-content {
-                        flex-direction: column;
-                        text-align: center;
-                    }
-
-                    .social-links {
-                        justify-content: center;
-                    }
-                }
-
-
+        .social-links {
+          justify-content: center;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1 onclick="window.location.href='index.html'">back to works...</h1>
+      <h1 onclick="window.location.href='index.html'">back to works...</h1>
     </header>
 
     <div class="about-container">
-         <div class="intro-section">
-             <div class="profile-image">
-                 <img src="moi!.png" alt="Jannah's Profile Picture">
-             </div>
-             <div class="about-text">
-                 <h2>About Me</h2>
-                 <p>Hi! I am Jannah, a creative and passionate Interactive Media and Business student in my final year at NYU Abu Dhabi. I love exploring the intersection of technology and design, and creating meaningful experiences through my work.</p>
-                 <br>
-                 <p>Throughout my academic journey, I've had the opportunity to work on various projects that combine art, technology, and human interaction. From interactive installations to VR experiences, each project has helped me grow as a creator and innovator.</p>
-                 <br>
-                 <p>My goal is to continue pushing the boundaries of interactive media while creating experiences that resonate with people and make a positive impact in their lives.</p>
-             </div>
-         </div>
+      <div class="intro-section">
+        <div class="profile-image">
+          <img src="Media/aboutPic.jpg" alt="Jannah's Profile Picture" />
+        </div>
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            Hi! I’m Jannah Mokhtar, a multidisciplinary designer and creative
+            technologist with a B.A in Interactive Media and Business from NYU
+            Abu Dhabi. I explore the intersection of technology, design, and
+            storytelling to create meaningful, human-centered experiences that
+            connect people through interaction.
+          </p>
+          <br />
+          <p>
+            My work spans interactive installations, digital & physical design,
+            VR environments, and generative systems. I’m especially drawn to
+            projects that combine art, technology, and human connection. I enjoy
+            experimenting across disciplines, applying skills in building,
+            coding, and physical computing to bring interactive concepts to
+            life. If there’s a person experiencing, feeling, or interacting with
+            the work, I’m all in.
+          </p>
+          <br />
+          <p>
+            My goal is to keep exploring the boundaries of design and
+            technology, creating experiences that resonate with people, spark
+            curiosity, and leave a positive impact in their lives.
+          </p>
+        </div>
+      </div>
 
-         <div class="action-section">
-             <h2>Jannah in Action!</h2>
-             <div class="action-grid">
-           <div class="image-container">
-               <img src="action1.JPG" alt="Jannah working on a project" class="action-image">
-               <p class="image-caption">drilling!</p>
-           </div>
-           <div class="image-container">
-               <img src="action2.jpg" alt="Jannah at an exhibition" class="action-image">
-               <p class="image-caption">weeeChair photo sesh</p>
-           </div>
-           <div class="image-container">
-               <img src="action3.jpeg" alt="Jannah presenting" class="action-image">
-               <p class="image-caption">Platonic Chains ⛓️</p>
-           </div>
-           <div class="image-container">
-               <img src="action4.png" alt="Jannah in the studio" class="action-image">
-               <p class="image-caption">presenting weeeChair</p>
-           </div>
-           <div class="image-container">
-                          <img src="action5.jpg" alt="Jannah at Louvre Abu Dhabi" class="action-image">
-                          <p class="image-caption">working at the IM Lab</p>
-                      </div>
-                      <div class="image-container">
-                          <img src="action6.png" alt="Jannah with Fifi Robot" class="action-image">
-                          <p class="image-caption">presenting a VR experience</p>
-                      </div>
-                      <div class="image-container">
-                          <img src="action7.png" alt="Jannah working on VR" class="action-image">
-                          <p class="image-caption">painting weeeChair</p>
-                      </div>
-                      <div class="image-container">
-                          <img src="action8.jpeg" alt="Jannah at capstone" class="action-image">
-                          <p class="image-caption">IM Showcase 2023! </p>
-                      </div>
-                  </div>
-              </div>
-                </div>
+      <div class="action-section">
+        <h2>Jannah in Action!</h2>
+        <div class="action-grid">
+          <div class="image-container">
+            <img
+              src="Media/action1.JPG"
+              alt="Jannah working on a project"
+              class="action-image"
+            />
+            <p class="image-caption">drilling!</p>
+          </div>
+          <div class="image-container">
+            <img
+              src="Media/action2.jpg"
+              alt="Jannah at an exhibition"
+              class="action-image"
+            />
+            <p class="image-caption">weeeChair photo sesh</p>
+          </div>
+          <div class="image-container">
+            <img
+              src="Media/action3.jpeg"
+              alt="Jannah presenting"
+              class="action-image"
+            />
+            <p class="image-caption">Platonic Chains ⛓️</p>
+          </div>
+          <div class="image-container">
+            <img
+              src="Media/action4.png"
+              alt="Jannah in the studio"
+              class="action-image"
+            />
+            <p class="image-caption">presenting weeeChair</p>
+          </div>
+          <div class="image-container">
+            <img
+              src="Media/action5.jpg"
+              alt="Jannah at Louvre Abu Dhabi"
+              class="action-image"
+            />
+            <p class="image-caption">working at the IM Lab</p>
+          </div>
+          <div class="image-container">
+            <img
+              src="Media/d3.png"
+              alt="Jannah with Fifi Robot"
+              class="action-image"
+            />
+            <p class="image-caption">Exhibiting @Dubai Design Week 2025</p>
+          </div>
+          <div class="image-container">
+            <img
+              src="Media/AIbootcamp.jpg"
+              alt="Jannah teaching at an AI Bootcamp"
+              class="action-image"
+            />
+            <p class="image-caption">Al Ain Innovates Bootcamp</p>
+          </div>
+          <div class="image-container">
+            <img
+              src="Media/sofraFlowers.jpg"
+              alt="Jannah at capstone"
+              class="action-image"
+            />
+            <p class="image-caption">Sofra Capstone Opening 💐</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer>
-        <div class="footer-content">
-            <div class="contact-info">
-                <p>Email: <a href="mailto:ja4343@nyu.edu">ja4343@nyu.edu</a></p>
-                <p>Phone: +971551457230 / +201023922989</p>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/j-da-savage" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/jannah-mokhtar-63a833214/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                    LinkedIn
-                </a>
-            </div>
+      <div class="footer-content">
+        <div class="contact-info">
+          <p>Email: <a href="mailto:ja4343@nyu.edu">ja4343@nyu.edu</a></p>
+          <p>Phone: +971551457230 / +201023922989</p>
         </div>
+        <div class="social-links">
+          <a href="https://github.com/j-da-savage" target="_blank">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              ></path>
+            </svg>
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jannah-mokhtar-63a833214/"
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+              />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
